@@ -1,2 +1,2 @@
 # password generator
- A python tool that genrates random password and stores the in a JSON format
+ A python tool that generates random password and stores the in a JSON format
