@@ -46,19 +46,19 @@ def save():
         #                     f"\nPassword: {password_entry.get()}\nIs it ok to save?")
         
         try:
-            with open('day 29/data.json', 'r') as data_file:
+            with open('data.json', 'r') as data_file:
                 #Reading old data
                 data = json.load(data_file)
 
                 
         except FileNotFoundError:
-            with open('day 29/data.json', 'w') as data_file:
+            with open('data.json', 'w') as data_file:
                 json.dump(new_data, data_file, indent=4)
         
         else:   
             #Updating old data with a new data
             data.update(new_data)
-            with open('day 29/data.json', 'w') as data_file:
+            with open('data.json', 'w') as data_file:
             #Saving updated data
                 json.dump(data, data_file, indent=4)
         finally:
@@ -70,7 +70,7 @@ def save():
 def find_password():
     website = website_entry.get()
     try: 
-        with open("day 29/data.json") as data_file:
+        with open("data.json") as data_file:
             data = json.load(data_file)
     except FileNotFoundError:
         messagebox.showinfo(title="Key Error", message="No data found")
@@ -88,7 +88,7 @@ window.title("Password manager")
 window.config(padx=50, pady=50)
 
 canvas = Canvas(width=200, height=200)
-logo_image = PhotoImage(file="day 29/logo.png")
+logo_image = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_image)
 canvas.grid(row=0, column=1)
 
